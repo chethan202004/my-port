@@ -38,3 +38,5 @@ if (months < 0) {
 durationElement.innerText = `${years} years, ${months} months`;
 
 document.addEventListener("DOMContentLoaded", calculateDuration);
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
