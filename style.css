@@ -119,3 +119,13 @@ border-radius: 8px; /* Optional: adds rounded corners */
   color: royalblue;
   font-size: medium;
 }
+
+
+footer {
+  background-color: #222;
+  color: #ccc;
+}
+
+footer p {
+  margin-bottom: 0;
+}
