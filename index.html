@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John MacTavish - Software Engineer</title>
+    <title>Chethan Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -43,8 +43,8 @@
         .spinner {
             width: 50px;
             height: 50px;
-            border: 5px solid #facc15; /* Yellow for spinner */
-            border-top-color: #14b8a6; /* Teal for spinner accent */
+            border: 5px solid #f97316;
+            border-top-color: #2dd4bf;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -62,8 +62,7 @@
         }
 
         header {
-            display: flex;
-            align-items: center;
+            text-align: center;
             margin-bottom: 3rem;
             opacity: 0;
             transform: translateY(20px);
@@ -75,36 +74,24 @@
             transform: translateY(0);
         }
 
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-right: 2rem;
-            object-fit: cover;
-        }
-
-        .header-text {
-            text-align: left;
-        }
-
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: #facc15; /* Yellow for main heading */
+            color: #f97316; /* Orange for main heading */
         }
 
         h2 {
             font-size: 1.25rem;
             font-weight: 400;
-            color: #14b8a6; /* Teal for subheading */
+            color: #2dd4bf; /* Aqua for subheading */
         }
 
         h3 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #facc15; /* Yellow for section headings */
+            color: #f97316; /* Orange for section headings */
         }
 
         .section {
@@ -121,13 +108,16 @@
 
         .job, .education, .project {
             margin-bottom: 1.5rem;
+            background-color: #1f2937;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #f97316; /* LinkedIn-inspired border */
         }
 
         .job h4, .education h4, .project h4 {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #14b8a6; /* Teal for job/education/project titles */
-            display: inline-block;
+            color: #2dd4bf; /* Aqua for job/education/project titles */
         }
 
         .job .date, .education .date, .project .date {
@@ -152,11 +142,6 @@
             color: #9ca3af;
         }
 
-        .role-divider {
-            border-top: 1px solid #9ca3af;
-            margin: 1rem 0;
-        }
-
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -164,38 +149,11 @@
         }
 
         .skill {
-            background-color: #1f2937;
+            background-color: #374151;
             color: #d1d5db;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.875rem;
-        }
-
-        .project-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .project-button {
-            background-color: #1f2937;
-            color: #facc15; /* Yellow for button text */
-            padding: 0.4rem 0.8rem;
-            border-radius: 0.375rem;
-            text-decoration: none;
-            font-size: 0.75rem;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .project-button:hover {
-            background-color: #facc15; /* Yellow on hover */
-            color: #000000;
         }
 
         .social-links {
@@ -207,7 +165,7 @@
 
         .social-button {
             background-color: #1f2937;
-            color: #facc15; /* Yellow for button text */
+            color: #f97316; /* Orange for button text */
             padding: 0.5rem 1rem;
             border-radius: 0.375rem;
             text-decoration: none;
@@ -216,8 +174,36 @@
         }
 
         .social-button:hover {
-            background-color: #facc15; /* Yellow on hover */
+            background-color: #f97316; /* Orange on hover */
             color: #000000;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .contact.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .contact-button {
+            background-color: #2dd4bf; /* Aqua for contact button */
+            color: #000000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #14b8a6; /* Darker aqua on hover */
         }
 
         .footer {
@@ -248,30 +234,17 @@
                 font-size: 1.25rem;
             }
 
-            .social-button, .project-button {
+            .social-button {
                 padding: 0.4rem 0.8rem;
                 font-size: 0.75rem;
             }
-
-            .profile-pic {
-                width: 80px;
-                height: 80px;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .header-text {
-                text-align: center;
-            }
-
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 2rem;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -289,6 +262,7 @@
 
         <div class="section">
             <p>I'm a Software Engineer at Arcesium, currently part of the DBRE (Database Reliability Engineering) team. My work revolves around building and optimizing CI/CD pipelines, managing and automating workflows with Argo, and ensuring robust database operations with PostgreSQL and SQL. I specialize in database management at scale, integrating AI-driven solutions to enhance performance, reliability, and automation. With hands-on experience in Docker, Kubernetes, and GitOps, I focus on creating resilient infrastructure and seamless deployment processes that support high-availability systems</p>
+        </p>
         </div>
 
         <div class="section">
@@ -296,30 +270,33 @@
             <div class="education">
                 <h4>B.Tech  in Computer Science - PES University</h4>
                 <div class="date">December 2021 - June 2025</div>
-                <p>Graduated with First-Class with Distinction, focusing on software engineering, web development, and AI-ML.</p>
+                <p>Graduated with First-Class with Distinction, focusing on software engineering, web development, and AI-ML</p>
+            </div>
+            <div class="education">
+                <h4>Pre-university and schooling</h4>
+                <p>Focused on science , maths and participated in many extra cirricular activity during my schooling and i also tooks leadership responsility</p>
             </div>
         </div>
 
         <div class="section">
             <h3>Experience</h3>
             <div class="job">
-                <h4>Arcesium</h4>
-                <!-- <div class="date">July 2018 - Current</div> -->
+                <h4>Arcesium india </h4>
                 <div class="sub-role">Software Engineer</div>
                 <div class="date">July 2025 - Current</div>
-                <p>I work with infrasture management , database maintenance </p>
-                <div class="role-divider"></div>
-                <div class="sub-role">Database reliability Engineer Intern</div>
+                <p>I managed databases, implemented backup strategies, and delivered AWS services reporting, while leveraging Git, Docker, and Kubernetes to streamline containerized application development and testing.</p>
+                <div class="sub-role">Database reliabilty Engineering Intern</div>
                 <div class="date">Jan 2025 - June 2025</div>
-                <p>I worked on git ops part for the team to migrate the jon running eco systemt to argo workflows</p>
+                <p>I automated AWS infrastructure with Python, built GitLab CI/CD pipelines, and migrated Airflow to Argo Workflows, boosting speed by 40%. I also used Git, Docker, and Kubernetes to streamline containerized app development and testing.</p>
                 <div class="skills">
                     <span class="skill">AWS</span>
                     <span class="skill">Python</span>
+                    <span class="skill">MS-SQL</span>
+                    <span class="skill">postgreSQL</span>
                     <span class="skill">Argo workflow</span>
                     <span class="skill">Docker</span>
-                    <span class="skill">CI-CD</span>
                     <span class="skill">Kubernetes</span>
-                    <span class="skill">MS - SQL</span>
+                    <span class="skill">CI-CD</span>
                 </div>
             </div>
         </div>
@@ -327,15 +304,9 @@
         <div class="section">
             <h3>Projects</h3>
             <div class="project">
-                <div class="project-header">
-                    <h4>Travel Mate</h4>
-                    <div class="project-buttons">
-                        <a href="https://travel-m1e5.vercel.app/" class="project-button">Preview</a>
-                        <a href="https://github.com/chethan202004/TravelMate" class="project-button">Code</a>
-                    </div>
-                </div>
+                <h4>Portfolio Website</h4>
                 <div class="date">2025</div>
-                <p>An all-in-one travel information and recommendation system for all your travel needs..</p>
+                <p>A minimalist portfolio website to showcase my work and experience, built with HTML, CSS, and JavaScript.</p>
                 <div class="skills">
                     <span class="skill">HTML5</span>
                     <span class="skill">CSS3</span>
@@ -343,13 +314,7 @@
                 </div>
             </div>
             <div class="project">
-                <div class="project-header">
-                    <h4>Task Management App</h4>
-                    <div class="project-buttons">
-                        <a href="https://taskapp.example.com" class="project-button">Preview</a>
-                        <a href="https://github.com/johnmactavish/task-app" class="project-button">Code</a>
-                    </div>
-                </div>
+                <h4>Task Management App</h4>
                 <div class="date">2024</div>
                 <p>Developed a full-stack task management application with real-time updates and user authentication.</p>
                 <div class="skills">
@@ -360,14 +325,11 @@
                 </div>
             </div>
         </div>
+
         <div class="contact">
             <h3>Get in touch</h3>
-            <p>I'm currently looking for new opportunities. Whether you have a question or want to say hi, hit the buttons below.</p>
-            <div class="contact-buttons">
-                <a href="mailto:john.mactavish@example.com" class="contact-button">Email</a>
-                <a href="https://github.com/johnmactavish" class="contact-button">GitHub</a>
-                <a href="https://linkedin.com/in/johnmactavish" class="contact-button">LinkedIn</a>
-            </div>
+            <p>I'm currently looking for new opportunities. Whether you have a question or want to say hi, hit that button.</p>
+            <a href="mailto:john.mactavish@example.com" class="contact-button">Contact Me</a>
         </div>
 
         <div class="footer">
@@ -397,7 +359,7 @@
         });
 
         // Scroll reveal effect
-        const sections = document.querySelectorAll('.section, header, .footer');
+        const sections = document.querySelectorAll('.section, header, .contact, .footer');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -410,12 +372,10 @@
             observer.observe(section);
         });
 
-        // Social button handlers
-        document.querySelectorAll('.social-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = button.href;
-            });
+        // Contact button handler
+        document.querySelector('.contact-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'mailto:john.mactavish@example.com';
         });
     </script>
 </body>
