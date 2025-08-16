@@ -1,42 +1,39 @@
-document.querySelectorAll('.gallery-container').forEach(gallery => {
-  let currentIndex = 0;
-  const images = gallery.querySelectorAll('.gallery-image');
-  const totalImages = images.length;
-
-  function showNextImage() {
-    images[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % totalImages; // Loops back to the first image
-    images[currentIndex].classList.add('active');
-  }
-
-  // Start the image rotation for each gallery individually every 3 seconds
-  setInterval(showNextImage, 2000);
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+    }, 1000);
 });
 
-const durationElement = document.getElementById("duration");
-const startDateStr = durationElement.getAttribute("data-start-date");
-const endDateStr = durationElement.getAttribute("data-end-date");
+// Smooth scroll and fade-in effect
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
 
-// Parse the start date
-const [startYear, startMonth] = startDateStr.split("-").map(Number);
-const startDate = new Date(startYear, startMonth - 1); // Month is zero-based
+// Scroll reveal effect
+const sections = document.querySelectorAll('.section, header, .contact, .footer');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
 
-// Use current date if end date is 'null', otherwise parse end date
-const endDate = endDateStr === "null" ? new Date() : new Date(...endDateStr.split("-").map(Number));
+sections.forEach(section => {
+    observer.observe(section);
+});
 
-// Calculate the difference in months
-let years = endDate.getFullYear() - startDate.getFullYear();
-let months = endDate.getMonth() - startDate.getMonth();
-
-// Adjust for negative month difference
-if (months < 0) {
-  years--;
-  months += 12;
-}
-
-// Set the duration text
-durationElement.innerText = `${years} years, ${months} months`;
-
-document.addEventListener("DOMContentLoaded", calculateDuration);
-
-document.getElementById('current-year').textContent = new Date().getFullYear();
+// Contact button handler
+document.querySelector('.contact-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'mailto:john.mactavish@example.com';
+});
